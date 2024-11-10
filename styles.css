@@ -1,0 +1,189 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el fondo del body */
+body {
+  background: url('fondo.svg') no-repeat center center fixed;
+  background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto; /* Permite el scroll vertical */
+}
+
+/* Contenedor principal */
+.container {
+  background: url('fondo-container.svg') no-repeat center center; /* Fondo SVG en el contenedor */
+  background-size: cover; /* Ajusta el fondo para cubrir el contenedor */
+  background-color: #ffffff; /* Color de fondo para que se vea mejor el SVG */
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  z-index: 1;
+  max-width: 500px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Asegúrate de que el fondo se vea bien en pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+
+  .container {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* Encabezado */
+.header {
+  margin-bottom: 20px;
+}
+
+.team-photo {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  color: rgb(4, 0, 108);
+  font-size: 1.8em;
+}
+
+.header p {
+  color: #000000;
+}
+/* Contactos */
+.contact-section h2 {
+  color: rgb(0, 0, 0);
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-card {
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra los elementos dentro de la tarjeta */
+  align-items: center; /* Centra la tarjeta en el contenedor */
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #04006c 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #04006c 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.contact-card:hover::after {
+  filter: blur(30px);
+}
+
+.contact-card:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.contact-photo {
+  width: 70px;
+  height: 70px;
+  background: #6b64f3;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  object-fit: cover;
+  display: block; /* Asegura que el elemento se comporte como bloque */
+  margin-left: auto;
+  margin-right: auto; /* Centra horizontalmente */
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info h3 {
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-info .position {
+  color: black;
+  font-weight: 400;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.contact-info p {
+  color: white;
+  margin-top: 10px;
+}
+
+.contact-info a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  background: #c8c4c6;
+  padding: 8px 25px;
+  border-radius: 8px;
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-info a:hover {
+  background: #015cfe;
+}
+
+
+/* Estilos para los enlaces */
+a:hover {
+  text-decoration: underline;
+}
